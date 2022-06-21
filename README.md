@@ -7,19 +7,23 @@ After completing this assignment, you should be able to:
 - Create an interactive program.
 - Read from a file.
 - Choose a random value.
-- Keep track of state.
+- Keep track of state - progress of the game in the command line, the variables the user has guessed, how many guesses, etc.
 
 ## Details
 
-For this lab, you will implement a word-guessing game we call Mystery Word. In your game, the player plays against the computer. This game will run on the command-line as a text-only interactive game.
+For this lab, you will implement a word-guessing game we call Mystery Word. 
+In your game, the player plays against the computer. 
+This game will run on the command-line as a text-only interactive game.
 
 ### Included files
 
 #### `mystery_word.py`
 
-This is a starter file. Delete the keyword `pass` in the `play_game` function and write your code from there. You do not have to change the code below the line that says `if __name__ == "__main__":`.
+This is a starter file. Delete the keyword `pass` in the `play_game` function and write your code from there. 
+You do not have to change the code below the line that says `if __name__ == "__main__":`.
 
-Notice that you are not passing in the file name as an argument on the command line. You should open the file yourself in your code, using its path.
+Notice that you are not passing in the file name as an argument on the command line. 
+You should open the file yourself in your code, using its path.
 
 #### `words.txt`
 
@@ -27,7 +31,8 @@ This is the source file your game will use to choose the secret word.
 
 #### `test-word.txt`
 
-This is a test file with only ONE word in it, instead of 58,000. It's a lot easier to think about one word while you're developing the game. You can change it if you want.
+This is a test file with only ONE word in it, instead of 58,000. It's a lot easier to think about one word while you're developing the game. 
+You can change it if you want.
 
 
 ## Minimum Requirements
@@ -44,11 +49,16 @@ The computer (that's you, writing this in Python code) must select a word at ran
 
 1. At the start of the game, let the user know how many letters the secret word contains.
 
-2. Ask the user to supply one guess (i.e. letter) per round. This letter can be upper or lower case and it should not matter. If a user enters more than one letter, tell them the input is invalid and let them try again.
+2. Ask the user to supply one guess (i.e. letter) per round. 
+This letter can be upper or lower case and it should not matter. 
+If a user enters more than one letter, tell them the input is invalid 
+and let them try again.
 
 3. Let the user know if their guess appears in the secret word.
 
-4. Display the partially guessed word, as well as letters that have not been guessed. For example, if the word is BOMBARD and the letters guessed are `a`, `b`, and `d`, the screen should display:
+4. Display the partially guessed word, 
+as well as letters that have not been guessed. 
+For example, if the word is BOMBARD and the letters guessed are `a`, `b`, and `d`, the screen should display:
 
 ```txt
 B _ _ B A _ D
@@ -56,13 +66,16 @@ B _ _ B A _ D
 
 ### Game Rules
 
-A user is allowed 8 guesses. Remind the user of how many guesses they have left after each round.
+A user is allowed 8 guesses. 
+Remind the user of how many guesses they have left after each round.
 
-_A user loses a guess only when they guess incorrectly._ If they guess a letter that is in the secret word, they do not lose a guess.
+_A user loses a guess only when they guess incorrectly._ 
+If they guess a letter that is in the secret word, they do not lose a guess.
 
 If the user guesses the same letter twice, do not take away a guess.
 
-Instead, print a message letting them know they've already guessed that letter and ask them to try again.
+Instead, print a message letting them know they've already guessed that letter 
+and ask them to try again.
 
 The game should end when the user constructs the full word or runs out of guesses.
 
