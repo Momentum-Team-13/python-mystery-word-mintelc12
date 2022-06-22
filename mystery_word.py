@@ -39,19 +39,17 @@ def generate_word_for_game():
 
     # Appends correct letters to a list for user to see
     correct_letter_guessed = []
+    incorrect_letter_guessed = []
     letter = input("")
-    for letter in list(answer_string):
-        if any([letter in list(answer_string)]):
+    # for letter in list(answer_string):
+    if any([letter in list(answer_string)]):
             correct_letter_guessed.append(letter)
             print(f"Your guess of {letter} is in the mystery word!")
-        else:
+            print(f"Correct letters:{correct_letter_guessed}")
+    else: 
             print(f"Sorry, {letter} is not in the mystery word.")
-    print(f"Correct letters:{correct_letter_guessed}")
-
+            
     # Appends incorrect letters to a list for user to see    
-    incorrect_letter_guessed = []
-    # for letter in answer_string:
-    if letter not in answer_string:
             incorrect_letter_guessed.append(letter)
     print(f"Incorrect letters:{incorrect_letter_guessed}")
     
