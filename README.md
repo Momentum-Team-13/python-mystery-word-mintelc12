@@ -5,8 +5,8 @@
 After completing this assignment, you should be able to:
 
 - Create an interactive program.
-- Read from a file.
-- Choose a random value.
+✅ Read from a file.
+✅ Choose a random value.
 - Keep track of state - progress of the game in the command line, the variables the user has guessed, how many guesses, etc.
 
 ## Details
@@ -47,14 +47,14 @@ The computer (that's you, writing this in Python code) must select a word at ran
 
 ### Game Flow
 
-1. At the start of the game, let the user know how many letters the secret word contains.
+✅ At the start of the game, let the user know how many letters the secret word contains.
 
-2. Ask the user to supply one guess (i.e. letter) per round. 
+✅. Ask the user to supply one guess (i.e. letter) per round. 
 This letter can be upper or lower case and it should not matter. 
 If a user enters more than one letter, tell them the input is invalid 
 and let them try again.
 
-3. Let the user know if their guess appears in the secret word.
+✅. Let the user know if their guess appears in the secret word.
 
 4. Display the partially guessed word, 
 as well as letters that have not been guessed. 
@@ -69,7 +69,7 @@ B _ _ B A _ D
 A user is allowed 8 guesses. 
 Remind the user of how many guesses they have left after each round.
 
-_A user loses a guess only when they guess incorrectly._ 
+✅ A user loses a guess only when they guess incorrectly._ 
 If they guess a letter that is in the secret word, they do not lose a guess.
 
 If the user guesses the same letter twice, do not take away a guess.
