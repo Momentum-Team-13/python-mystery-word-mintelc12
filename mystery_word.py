@@ -1,9 +1,11 @@
 import random
 
+from pyrsistent import inc
+
 def play_game():
     answer = generate_word_for_game()
-    print(f"answer: {answer}")
-    print("_" * len(answer))
+    # print(f"answer: {answer}")
+    # print("_" * len(answer))
 
     user_guesses_letter(answer)
 
@@ -29,7 +31,7 @@ def generate_word_for_game():
 
     # displays letters of random word in list and prints list
     list(answer_string)
-    print(list(answer_string))
+    # print(list(answer_string))
 
     return answer_string
 
@@ -39,23 +41,26 @@ def user_guesses_letter(answer_string):
     correct_letter_guessed = []
     incorrect_letter_guessed = []
     word_to_guess = list("_" * len(answer_string))
-    print(word_to_guess)
+    print("".join(word_to_guess))
     while len(incorrect_letter_guessed) < 8 and "_" in word_to_guess:
         letter = guess_character()
+        
+        if len(letter) > 1:
+            print("Oops! Only guess one letter at a time!")
 
-        # for letter in list(answer_string):
-        if any([letter in list(answer_string)]):
+        elif letter in correct_letter_guessed or letter in incorrect_letter_guessed:
+            print("You already guessed that letter! Guess again.")
+        
+        elif any([letter in list(answer_string)]):
             correct_letter_guessed.append(letter)
             # Range goes from 0 to the length of object
             for letter_index in range(len(list(answer_string))):
                 if list(answer_string)[letter_index] == letter:
                     # letter_index = list(answer_string).index(letter)
                     word_to_guess[letter_index] = letter
-            print(word_to_guess)
+            print("".join(word_to_guess))
             print(f"Your guess of {letter} is in the mystery word!")
             print(f"Correct letters:{correct_letter_guessed}")
-        elif len(letter) > 1:
-            print("Oops! Only guess one letter at a time!")
         else: 
             print(f"Sorry, {letter} is not in the mystery word. You have {7 - len(incorrect_letter_guessed)} guesses left.")
             
@@ -63,17 +68,14 @@ def user_guesses_letter(answer_string):
             incorrect_letter_guessed.append(letter)
             print(f"Incorrect letters:{incorrect_letter_guessed}")
     if len(incorrect_letter_guessed) == 8:
-        print("Sorry, you lost!")
+        print(f"Sorry, you lost! The word was {answer_string}.")
     else:
-        print("Hooray! You won the game!")
+        print(f"Hooray! You won the game! The word was {answer_string}")
     
-
 def guess_character():
     guess = input("Guess a letter:\n")
 
     return guess
-
-
 
 if __name__ == "__main__":
     play_game()
